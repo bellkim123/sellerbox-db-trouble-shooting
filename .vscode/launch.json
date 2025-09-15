@@ -1,0 +1,91 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "HealthCheckHammer (.NET 9)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+      "args": ["--scenario","HealthCheckHammer","--concurrency","5","--durationSec","10","--intervalMs","500"],
+      "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+      "cwd": "${workspaceFolder}/DbConnRepro",
+      "console": "integratedTerminal"
+    },
+
+    {
+      "name": "TcpProbeStorm (.NET 9)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+      "args": [
+        "--scenario","TcpProbeStorm",
+        "--host","db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com",
+        "--port","3306","--concurrency","50","--durationSec","30","--intervalMs","10"
+      ],
+      "cwd": "${workspaceFolder}/DbConnRepro",
+      "console": "integratedTerminal"
+    },
+    {
+    "name": "HandshakeCancelStorm (.NET 9)",
+    "type": "coreclr",
+    "request": "launch",
+    "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+    "args": ["--scenario","HandshakeCancelStorm","--concurrency","80","--durationSec","30","--cancelMs","200"],
+     "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+    "cwd": "${workspaceFolder}/DbConnRepro",
+    "console": "integratedTerminal"
+    },
+    {
+    "name": "ShortTimeoutRetryBurst (.NET 9)",
+    "type": "coreclr",
+    "request": "launch",
+    "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+    "args": ["--scenario","ShortTimeoutRetryBurst","--concurrency","120","--durationSec","45","--retryDelayMs","0"],
+     "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+    "cwd": "${workspaceFolder}/DbConnRepro",
+    "console": "integratedTerminal"
+    },
+    {
+    "name": "PoolThrashByLifetime (.NET 9)",
+    "type": "coreclr",
+    "request": "launch",
+    "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+    "args": ["--scenario","PoolThrashByLifetime","--concurrency","100","--durationSec","45","--intervalMs","10"],
+     "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+    "cwd": "${workspaceFolder}/DbConnRepro",
+    "console": "integratedTerminal"
+    },
+    {
+    "name": "WrongCredentialsBurst (.NET 9)",
+    "type": "coreclr",
+    "request": "launch",
+    "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+    "args": ["--scenario","WrongCredentialsBurst","--concurrency","20","--durationSec","20","--intervalMs","200","--badPwd","true"],
+    "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+    "cwd": "${workspaceFolder}/DbConnRepro",
+    "console": "integratedTerminal"
+    },
+    {
+    "name": "LongQueryTimeout (.NET 9)",
+    "type": "coreclr",
+    "request": "launch",
+    "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
+    "args": ["--scenario","LongQueryTimeout","--concurrency","10","--durationSec","30","--intervalMs","200"],
+     "env": {
+        "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
+      },
+    "cwd": "${workspaceFolder}/DbConnRepro",
+    "console": "integratedTerminal"
+    }
+  ]
+}

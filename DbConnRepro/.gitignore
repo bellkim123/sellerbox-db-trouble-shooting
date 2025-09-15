@@ -1,0 +1,73 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/.idea.cplat-auth.iml
+/modules.xml
+/contentModel.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# 빌드 결과물
+bin/
+obj/
+
+# 사용자별 파일
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# 로그 및 임시 파일
+*.log
+*.tmp
+*.bak
+
+# Visual Studio 관련
+.vs/
+.vscode/
+.idea/
+
+# NuGet 패키지
+*.nupkg
+*.snupkg
+*.nuspec
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+*.csproj.user
+
+# Rider, JetBrains
+.idea/
+
+# 기타
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+
+# 백업 및 리포트 파일
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
+
+# 빌드 출력 폴더
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]eleases/
+[Rr]eleasesPublic/
+[Oo]utput/
+[Ll]og/
+[Ll]ogs/
+
+# 환경 설정 파일 (운영용)
+appsettings.Production.json
+appsettings.Development.json
+appsettings.json
+appsettings.*.json
