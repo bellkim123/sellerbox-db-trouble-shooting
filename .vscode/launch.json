@@ -32,7 +32,7 @@
     "type": "coreclr",
     "request": "launch",
     "program": "${workspaceFolder}/DbConnRepro/bin/Debug/net9.0/DbConnRepro.dll",
-    "args": ["--scenario","HandshakeCancelStorm","--concurrency","80","--durationSec","30","--cancelMs","200"],
+    "args": ["--scenario","HandshakeCancelStorm","--concurrency","300","--durationSec","60","--cancelMs","120"],
      "env": {
         "DB_CONN": "Server=db-instance-cplat-dev.czb9ycmni9kf.ap-northeast-2.rds.amazonaws.com;Port=3306;Database=sellerbox;Uid=root;Pwd=aAKhVN5wb4f6KkXC;SslMode=Required;Pooling=true;Connect Timeout=10;MinimumPoolSize=0;MaximumPoolSize=50"
       },
