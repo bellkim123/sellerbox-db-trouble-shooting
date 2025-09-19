@@ -7,7 +7,7 @@ namespace DbConnRepro;
 
 public static class Program
 {
-    // ⚠️ 운영 DB에서 절대 실행 금지!
+    // Live 운영 DB에서 절대 실행 금지!
     // 환경변수 DB_CONN 또는 --conn 옵션으로 연결문자열 주입.
 
     public static async Task<int> Main(string[] args)
@@ -237,7 +237,7 @@ public static class Program
     {
         Console.WriteLine("Running ProtocolGarbageStorm… (send invalid pre-auth bytes + RST)");
         string targetHost = await PinHostAsync(args.Host!, args.ResolveOnce);
-        byte[] garbage = new byte[] { 0x4D, 0x59, 0x53, 0x51, 0x00, 0xFF }; // "MYSql?" 느낌의 잡바이트
+        byte[] garbage = [0x4D, 0x59, 0x53, 0x51, 0x00, 0xFF];
 
         List<Task> workers = new();
         for (int i = 0; i < args.Concurrency; i++)
